@@ -7,6 +7,7 @@ library(feather)
 library(geosphere)
 library(janitor)
 library(shiny.semantic)
+library(shinyjs)
 
 ships <- feather::read_feather("data/ships.feather")
 
