@@ -42,8 +42,8 @@ In this module, I re-used the `select_input.R` module and also created a time se
 
 ### Links to Application
 
-- (Semantic)[https://pascalschmidt.shinyapps.io/shiny_semantic_marine/]
-- (Bootstrap)[https://pascalschmidt.shinyapps.io/bootstrap_marine/]
+- [Semantic](https://pascalschmidt.shinyapps.io/shiny_semantic_marine/)
+- [Bootstrap](https://pascalschmidt.shinyapps.io/bootstrap_marine/)
 
 
 
