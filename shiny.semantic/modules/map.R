@@ -26,7 +26,7 @@ map_ui <- function(id) {
   
 }
 
-map_server <- function(id, df, action_button) {
+map_server <- function(id, df, action_button, ships_table) {
   
   shiny::moduleServer(
     id,
@@ -100,7 +100,7 @@ map_server <- function(id, df, action_button) {
       
       # at the beginning of the app, get ship name and type and show data table
       # afterwards, use proxy to replace data instead of rendering entire table
-      dt_table_first <- ships %>% 
+      dt_table_first <- ships_table %>% 
         dplyr::filter(ship_type == "Cargo", shipname == ". PRINCE OF WAVES") %>% 
         .[which(.[["distance_traveled"]] == max(.[["distance_traveled"]], na.rm = TRUE)), ] %>% 
         dplyr::select(shipname, ship_type, distance_traveled)
