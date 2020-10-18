@@ -7,6 +7,7 @@ library(feather)
 library(geosphere)
 library(janitor)
 library(shiny.semantic)
+library(shinycssloaders)
 
 ships <- feather::read_feather("data/ships.feather")
 
@@ -16,6 +17,8 @@ list.files("modules") %>%
 ui <- shiny::fluidPage(
     
     shinyjs::useShinyjs(),
+    style = "padding-right: 0px;
+             padding-left: 0px;",
     
     shiny::navbarPage(
         title = "Port Analytics",
