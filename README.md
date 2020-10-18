@@ -14,6 +14,8 @@ The application consists of two/three modules:
 - map.R file 
 - plot.R file (only in bootstrap version)
 
+To run the applications, only a data folder is needed in the `bootstrap` folder and `shiny.semantic` folder with a csv file of the ships data. 
+
 ### Data Cleaning
 
 I used the `geosphere` package and the `distHaversine()` function to calculate the distance between two lat and lon data pairs. The calculations were done before, not within the application, and the results were saved in a column, `distance_traveled`. 
