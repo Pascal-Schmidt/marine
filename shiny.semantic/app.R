@@ -26,7 +26,8 @@ server <- function(input, output, session) {
     
     user_inputs <- drop_down_server(id = "dropdowns", df = ships)
     map_server(id = "map", df = user_inputs$filtered_ship,
-               action_button = user_inputs$action_filter)
+               action_button = user_inputs$action_filter,
+               ships_table = ships)
     
 }
 
