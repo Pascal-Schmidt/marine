@@ -13,13 +13,6 @@ ships <- feather::read_feather("data/ships.feather")
 list.files("modules") %>%
     purrr::map(~ source(paste0("modules/", .)))
 
-router <- make_router(
-    route("/other", tagList(
-        drop_down_ui("dropdowns", df = ships),
-        map_ui("map")
-    ))
-)
-
 ui <- shiny.semantic::semanticPage(
     
     shinyjs::useShinyjs(),
