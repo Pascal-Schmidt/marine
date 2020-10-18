@@ -13,7 +13,8 @@ plots_ui <- function(id) {
             class = "panel panel-default",
             div(
               class = "panel-body", 
-              plotly::plotlyOutput(outputId = ns("plot"), height = 400),
+              plotly::plotlyOutput(outputId = ns("plot"), height = 400) %>% 
+                shinycssloaders::withSpinner(),
               DT::DTOutput(outputId = ns("table"))
             )
           )
@@ -36,7 +37,8 @@ plots_server <- function(id, df, action_button) {
       
       plotly_df <- shiny::eventReactive(action_button(), {
         
-        df()
+        df() %>% 
+          dplyr::select(-c("port", "ship_id"))
         
       })
       
@@ -58,8 +60,8 @@ plots_server <- function(id, df, action_button) {
         
         shiny::isolate(plotly_df())
         
-      }, selection = 'none',
-      rownames = FALSE, options = list(dom = 't', ordering = F, processing = FALSE))
+      },
+      rownames = FALSE, options = list(processing = FALSE))
       
       proxy <- DT::dataTableProxy("table")
       
